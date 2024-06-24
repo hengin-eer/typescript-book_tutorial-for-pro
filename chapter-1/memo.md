@@ -128,3 +128,33 @@ JavaScriptが動作する環境なら動く（ただし基本はJSへのコン�
 
 基本ブラウザで動作する言語なので、OSも問わない。
 エディタはVSCodeで良い。
+
+### Node.js環境での開発準備
+FWを使用していれば必要ないが、`package.json`の初期化を行う。
+
+```bash
+npm init --yes
+npm install --save-dev typescript @types/node
+```
+
+```
+.
+├── node_modules
+│     ├── @types
+│     │     └── node
+│     └── typescript
+├── package-lock.json
+└── package.json
+```
+
+上のようなフォルダ構成になる。
+
+### `tsconfig.json`の設定
+このファイルは、**TypeScriptコンパイラに対する設定ファイル**である。
+もちろんコマンドライン引数によるコンパイラオプションの指定も可能だ。
+以下のコマンドで初期化できる。
+```
+npx tsc --init
+```
+
+
